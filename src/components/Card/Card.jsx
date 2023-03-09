@@ -1,7 +1,15 @@
 
 import styles from "./Card.module.css"
+import { useState } from "react";
 
-export default function Card({name, species, gender, image, onClose}) { //podemos pasar props y abajo usar props.name y ext, pero es mejor desestructurar
+export default function Card({id, name, species, gender, image, onClose}) { //podemos pasar props y abajo usar props.name y ext, pero es mejor desestructurar
+   
+   //  const [id, setId] = useState("");
+
+   // const handleChange = (event) => {
+   //    setId(event.target.value);
+   // }
+   
    return (
       <div className={styles.card}>
 
@@ -13,7 +21,7 @@ export default function Card({name, species, gender, image, onClose}) { //podemo
             <h1 className={styles.title}>{name}</h1>
             <h2 className={styles.subtitle}>{species}</h2>
             <h2 className={styles.subtitle}>{gender}</h2>
-            <button onClick={onClose} className={styles.button}> X </button>
+            <button onClick={() => {onClose(id)}} className={styles.button}> X </button>
             
          </div>
       </div>

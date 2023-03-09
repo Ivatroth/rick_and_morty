@@ -6,7 +6,7 @@ export default function SearchBar({ onSearch }) { // desestructuro props
    const [id, setId] = useState("");
 
    const handleChange = (event) => {
-      setId(event.target.value);
+      setId(event.target.value); //event.target es quien ejecuta, en este caso el imput
    }
 
    return (
