@@ -1,38 +1,22 @@
 .App {
-  text-align: center;
-}
+   text-align: center;
+   background-image: url("./fondo.jpg");     /*linear-gradient(rgb(231, 97, 231), rgb(211, 199, 37), rgb(152, 59, 206));   */       
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+   background-repeat: no-repeat;
+   /*Centramos el fondo al centro*/
+   /* background-position: center; */
+   /*Y le decimos que siempre ocupe el ancho y el alto con esto*/
+   background-size: cover;
+} 
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* .firstCard{
+   background-image: repeating-conic-gradient(rgb(93, 44, 207) 10%, rgb(68, 42, 218) 20%);
+   margin-left: 10%;
+   margin-right: 10%;
+   opacity: .8;
+   border-radius: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+} */

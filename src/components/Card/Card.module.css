@@ -1,0 +1,61 @@
+
+.card{
+    display: flex;
+    flex-direction: row;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 10px;
+    border-style:double;
+    /* opacity: .8; */
+}
+
+.button{
+    opacity: 7;
+    border-radius: 6px;
+    background-color: chartreuse;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:xx-large;
+    font-style:oblique ;
+    border-style:groove;
+    /* padding: 10px; */
+    padding-left: 20px;
+    padding-right: 20px;
+    /* margin: 5%; */
+    height: 50px;
+    /* align-self: self-end; */
+    width: 95%;
+
+}
+
+.title{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-style: italic;
+    font-size: xx-large;
+    background-color:rgb(236, 240, 240);
+    padding: 5%;
+    border-radius: 6%;
+    /* opacity: .7; */
+    width: 200px;
+}
+
+.subtitle{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.divimage{
+    border-radius: 60px;
+    display: flex;
+    flex-direction: row;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+
+.image{
+    stop-opacity: 100%;
+    border-radius: 16px;
+}

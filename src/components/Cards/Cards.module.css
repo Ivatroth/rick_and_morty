@@ -1,0 +1,12 @@
+
+.cards{
+    background-image:repeating-linear-gradient(rgb(42, 6, 248), rgb(0, 174, 255), rgb(3, 247, 3));
+    /* background:transparent 90%; */
+    padding: 50px;
+    opacity: .9;
+    margin-left: 0%;   
+    margin-right: 0%;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
