@@ -1,0 +1,32 @@
+
+.form{
+    font-size: large;
+}
+label{
+    padding: 0.5em;
+    font-size: large;
+}
+input{
+    height: fit-content;
+    width: fit-content;
+    margin-bottom: 1em;
+    font-size: large;
+    padding: 0.1em;
+    border-radius: 10px;
+    margin: 1em;
+}
+
+.button{
+    border-radius: 7px;
+    height: 30px;
+    width: 150px;
+    font-size: 100%;
+    font-style: oblique;
+} 
+
+span{
+    font-size: large;
+    font-weight: bold;
+    color: blueviolet;
+
+}

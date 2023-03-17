@@ -1,8 +1,6 @@
 
 .searchBar{
-    
-    /* background: rgb(247, 39, 2);
-    border-color: black; */
+  
     width: fit-content;
 
 }
@@ -10,16 +8,17 @@
 .button{
     border-radius: 7px;
     margin: 20px;
-    height: 60px;
-    width: 250px;
-    font-size: 200%;
+    height: 30px;
+    width: 150px;
+    font-size: 100%;
     font-style: oblique;
 }
 
 .input{
     border-radius: 7px;
     background-color: bisque;
-    height: 60px;
-    width: 500px;
-    font-size:200%;
+    height: 30px;
+    width: 300px;
+    font-size:100%;
+    
 }

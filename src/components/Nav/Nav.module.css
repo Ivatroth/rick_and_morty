@@ -1,3 +1,15 @@
 .nav{
     background:transparent;
+    display: flex;
+    flex-direction: row;
+    justify-content:last baseline;
+    font-size:medium;
+
+}
+
+/* .search{
+    justify-self:flex-end;
+} */
+.subtitle{
+    margin:  0.5em;
 }
