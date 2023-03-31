@@ -6,17 +6,21 @@ import axios from "axios";
 
 const Detail = ()=>{
 
-    const {detailId} = useParams(); //params me da un objeto que tiene los valores de lo que le pase en /:algo
+    const {id} = useParams(); //params me da un objeto que tiene los valores de lo que le pase en /:algo
     const [character, setCharacter] = useState({});
-
-
+    
+    //console.log(id);
+  
       useEffect(()=>{
-        const URL_BASE = "https://be-a-rym.up.railway.app/api";
-        const API_KEY = "477142636af7.4a5cc39cc5e9bad625db";
-        // Dejo axios que jorge mostro pero igual no lo comprendo tanto, ni axios ni fetch
-        axios(`${URL_BASE}/character/${detailId}?key=${API_KEY}`).then((response) => setCharacter(response.data));
-      }, []);
+        const URL_BASE = "http://localhost:3001";
+        //const API_KEY = "477142636af7.4a5cc39cc5e9bad625db";
+        
+        axios(`${URL_BASE}/detail/${id}`).then((response) => {
 
+          setCharacter(response.data)
+        });
+      }, []);
+    console.log(character);
     return(
         <div className={styles.contenedor}>
           

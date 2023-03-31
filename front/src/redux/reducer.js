@@ -9,6 +9,7 @@ const rootReducer = (state = initialState, action) => {
     switch (action.type) {
   
       case MY_FAVORITE:
+        
         return { 
           ...state, 
           myFavorites: [...state.myFavorites, action.payload] ,

@@ -1,22 +1,41 @@
+//import { deleteFavorite , getFavorites} from "../../redux/actions";
 import { addFavorite, deleteFavorite } from "../../redux/actions";
-import { connect } from "react-redux";
+
+import { connect, useDispatch } from "react-redux";
 import styles from "./Card.module.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import axios from "axios";
+import React from "react";
 
 
 function Card(props) { //podemos pasar props y abajo usar props.name y etc., pero es mejor desestructurar
-   const { id, name, species, gender, image, onClose, myFavorites, addFavorite,deleteFavorite } = props
+   const { id, name, species, gender, image, onClose, myFavorites, addFavorite, deleteFavorite } = props
    const [isFav,setIsFav] = useState(false);
+   
+//    //********* */
+   
+//   const dispatch = useDispatch();
+   // const addFavorite = function(character){
+   //    axios.post("http://localhost:3001/rickanmorty/fav", character)
+   //       .then((res)=>{console.log("Favorito agregado")})
+   // }
 
-  
+//    const deleteFavorite = async (id) => {
+//       await axios.delete(`http://localhost:3001/rickandmorty/fav/${id}`);
+//       dispatch(getFavorites());
+//       alert("Favorito eliminado");
+//     };
+
+//   //********** */
+
    function handleFavorite(){
       if(isFav) {
          setIsFav(false)
          deleteFavorite(id);
       }else {
          setIsFav(true);
-         addFavorite({ id, name, species, gender, image, onClose});
+         addFavorite({ id, name, species, gender, image})//, onClose});
       }
     }
    

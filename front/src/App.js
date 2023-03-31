@@ -31,14 +31,16 @@ function App () {
   function onSearch(id) {
 
    // API de JORGE
-   const URL_BASE = "https://be-a-rym.up.railway.app/api";
-   const API_KEY = "477142636af7.4a5cc39cc5e9bad625db";
+   // const URL_BASE = "https://be-a-rym.up.railway.app/api";
+   // const API_KEY = "477142636af7.4a5cc39cc5e9bad625db";
+
+   const URL_BASE ="http://localhost:3001"; //rickandmorty"
       
    if(characters.find((char) => char.id === id)){
       return alert("Personaje repetido")
    }
-   
-   fetch(`${URL_BASE}/character/${id}?key=${API_KEY}`)
+   ////fetch(`${URL_BASE}/character/${id}?key=${API_KEY}`)
+   fetch(`${URL_BASE}/onsearch/${id}`)
        .then((response) => response.json()) 
        .then((data) => {
           if (data.name) {
@@ -48,6 +50,7 @@ function App () {
           } else {
              window.alert('No hay personajes con ese ID');
           }
+          
        });
 
        
@@ -60,7 +63,7 @@ function App () {
    
  };
 
-    //esto espara comparar el usename y password
+    //esto es para comparar el usename y password
     function login(userData){
       if(userData.username === usename && userData.password === password){
          setAccess(true);
@@ -78,7 +81,7 @@ function App () {
          <Routes>
             <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} /> 
             <Route path="/about" element={<About />} />
-            <Route path="/detail/:detailId" element={<Detail />} />
+            <Route path="/detail/:id" element={<Detail />} />
             <Route path="/" element={<Form login={login} />} />
             <Route path="/favorites" element={<Favorites onClose={onClose}/>} />
          </Routes>
@@ -87,4 +90,5 @@ function App () {
 }
 
 export default App;
+
 
