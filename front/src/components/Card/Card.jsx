@@ -1,11 +1,12 @@
-//import { deleteFavorite , getFavorites} from "../../redux/actions";
-import { addFavorite, deleteFavorite } from "../../redux/actions";
+
+//! VER SI HACE FALTAESTE IMPORT YA QUE LOS RECIVIMOS POR PROPS
+import { addFavorite, deleteFavorite, getFavorites } from "../../redux/actions";
 
 import { connect, useDispatch } from "react-redux";
 import styles from "./Card.module.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import axios from "axios";
+//import axios from "axios";
 import React from "react";
 
 
@@ -33,9 +34,11 @@ function Card(props) { //podemos pasar props y abajo usar props.name y etc., per
       if(isFav) {
          setIsFav(false)
          deleteFavorite(id);
+         //getFavorites();
       }else {
          setIsFav(true);
          addFavorite({ id, name, species, gender, image})//, onClose});
+         //getFavorites();
       }
     }
    
@@ -75,6 +78,7 @@ function Card(props) { //podemos pasar props y abajo usar props.name y etc., per
 
 const mapDispatchProps = (dispatch) => {
    return{
+      getFavorites:() => {dispatch(getFavorites())},
       addFavorite:(personaje)=>{dispatch(addFavorite(personaje))},
       deleteFavorite:(id) => {dispatch(deleteFavorite(id))}
    };

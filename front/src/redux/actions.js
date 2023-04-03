@@ -4,25 +4,42 @@ export const MY_FAVORITE = "MY_FAVORITE";
 export const REMOVE_PERSONAJE = "REMOVE_PERSONAJE";
 export const FILTER = "FILTER";
 export const ORDER = "ORDER";
-
-//export const GET_FAVORITES = "GET_FAVORITES";
-
-
+const URL_BASE = "http://localhost:3001";
+export const GET_FAVORITES = "GET_FAVORITES";
 
 
-export const addFavorite = (personaje) =>{
-  
-  const URL_BASE = "http://localhost:3001";
-  
-  axios(`${URL_BASE}/rickandmorty/fav`, personaje)
-    .then((response) => console.log(response.data));
-  
-  return {type: MY_FAVORITE, payload: personaje};
+export const addFavorite =  (personaje) =>{
+  try {
+    return async function (dispatch) {
+      const response = await axios.post(`${URL_BASE}/rickandmorty/fav`, personaje);
+      dispatch({type: MY_FAVORITE, payload: response.data});
+     }
+    
+  } catch (error) {
+    throw Error(error.message);
+  }
+
+    // axios.post(`${URL_BASE}/rickandmorty/fav`, personaje)
+    //   .then((response) => console.log(response.data));
+    // return {type: MY_FAVORITE, payload: personaje};
+
   }
 
   
 export const deleteFavorite = (id) => {
-  return { type: REMOVE_PERSONAJE, payload: id };
+
+  try {
+    return async function(dispatch){
+      const response = axios.delete(`${URL_BASE}/rickandmorty/fav/${id}`);
+      dispatch({ type: REMOVE_PERSONAJE, payload: id });
+    }
+  } catch (error) {
+    throw Error(error.message);
+  }
+
+  // axios.delete(`${URL_BASE}/rickandmorty/fav/${id}`)
+  // .then((response) => console.log(response.data));
+  // return { type: REMOVE_PERSONAJE, payload: id };
 };
 
 export const filterCards = (gender) => {
@@ -34,12 +51,16 @@ export const orderCards = (id) => {
 };
 
 
-// export const getFavorites = () => {
-//   return async function(dispatch){
-//     const URL_BASE = "http://localhost:3001";
-//     const response = await axios.get(`${URL_BASE}/rickandmorty/fav`);
-//     dispatch({type: GET_FAVORITES, payload: response.date})
-//   }
-// }
+export const getFavorites = () => {
+  try {
+    return async function(dispatch){
+      const response = await axios.get(`${URL_BASE}/rickandmorty/fav`);
+      dispatch({type: GET_FAVORITES, payload: response.data})
+    }
+  } catch (error) {
+    throw Error(error.message);
+  }
+
+}
   
 

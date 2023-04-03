@@ -7,6 +7,7 @@ export default function Nav(props){
     const {pathname} = useLocation();
     return(
         <nav className={styles.nav}>
+
             <div >
                 <Link to="/home"><h3 className={styles.subtitle}>Home</h3></Link>
             </div>
@@ -19,8 +20,6 @@ export default function Nav(props){
             <div className={styles.search}>
                 {pathname === "/home" && <SearchBar onSearch={props.onSearch} />}
             </div>
-            
-            
             
         </nav>
     );

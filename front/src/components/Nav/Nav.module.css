@@ -2,14 +2,20 @@
     background:transparent;
     display: flex;
     flex-direction: row;
-    justify-content:last baseline;
-    font-size:medium;
-
+    justify-content:space-around;
+    font-size:large;   
+    border: 5px solid salmon;
+    border-radius: 20px;
 }
 
-/* .search{
+.search{
     justify-self:flex-end;
-} */
+}
+
 .subtitle{
     margin:  0.5em;
+    padding-top: 10px;
+    font-style: oblique;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
 }

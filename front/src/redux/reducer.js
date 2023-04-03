@@ -1,4 +1,4 @@
-import {ORDER, FILTER, MY_FAVORITE, REMOVE_PERSONAJE } from "./actions";
+import {ORDER, FILTER, MY_FAVORITE, REMOVE_PERSONAJE, GET_FAVORITES } from "./actions";
 
 const initialState = {
     myFavorites: [],
@@ -50,6 +50,10 @@ const rootReducer = (state = initialState, action) => {
                 myFavorites: ordenado.reverse()
             }  
          }  
+
+      case GET_FAVORITES:
+                
+        return { ...state, myFavorites:  action.payload };
           
       default:
         return { ...state };

@@ -5,3 +5,13 @@ select{
     width: 250px;
     font-size: 100%;
 }
+
+.favs{
+    background-image:repeating-linear-gradient(rgb(248, 6, 224), rgb(242, 147, 83), rgb(232, 241, 75));
+    border-radius: 20px;
+}
+
+.cardfavs{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
