@@ -42,10 +42,9 @@ const getCharDetail = async (req, res) => {
                 const response = await axios.get(`${URL_BASE}/character/${id}?key=${API_KEY}`)
                 //.then((response) => successH(response,res)) //sacamos las funciones a fuera
                 //.catch((error) => errorH(error,res))    
-                console.log("OBJETO: " + response)
-                console.log("OBJETO.data: " + response.data)
+
                 const {image,name,gender,species,origin} = response.data;
-                console.log(name);
+
                 res.status(200).json({image,name,gender,species,origin})
         
             } catch (error) {

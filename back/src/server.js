@@ -4,24 +4,28 @@
 
 const express = require("express");
 const router = require("./routes/index") 
-const  cors  = require ('cors')
+const cors  = require ('cors')
 const morgan = require("morgan");
 const PORT = 3001;
-
+const { conn } = require('./DB_connection');
 const server = express();
+
 server.use(express.json());
 server.use(morgan("dev"));
 
 server.use(cors());
 server.use("/",router); 
 
+conn.sync({force: true});
+   
 server.listen(PORT, () => {
    console.log('Server raised in port ' + PORT);
 });
 
 
 
-//! hay que instalar cors importarlo y poner server.use(cors())
+
+
 
 
 

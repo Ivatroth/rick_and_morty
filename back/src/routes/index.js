@@ -1,5 +1,5 @@
 const {Router} = require("express");
-let favs = require("../utils/favs")
+//let favs = require("../utils/favs")
 const getCharById = require("../controllers/getCharById");
 const getCharDetail = require("../controllers/getCharDetail");
 
@@ -19,14 +19,14 @@ router.post("/rickandmorty/fav", (req, res)=>{
 
 })
 
-router.get("/rickandmorty/fav", (req,res)=>{
-    res.status(200).json(favs);
-})
+// router.get("/rickandmorty/fav", (req,res)=>{
+//     res.status(200).json(favs);
+// })
 
-router.delete("/rickandmorty/fav/:id", (req,res)=>{
-    const {id} = req.params;
-    favs = favs.filter((fav) => fav.id !== Number(id));
-    res.status(200).json({status: "ok"});
-})
+// router.delete("/rickandmorty/fav/:id", (req,res)=>{
+//     const {id} = req.params;
+//     favs = favs.filter((fav) => fav.id !== Number(id));
+//     res.status(200).json({status: "ok"});
+// })
 
 module.exports = router;
