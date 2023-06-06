@@ -14,33 +14,37 @@ import { useNavigate, useLocation } from 'react-router-dom'
 function App () { 
 
    // Creando un Estado de App
-  const[characters, setCharacters] = useState([]); 
-  const {pathname} = useLocation(); //pathname es una propiedad de Location que es un objeto
-  //useState es una funcion que me debuelve un  array con 2 cosas: un estado  y una funcion que modifica el estado
-  const[access, setAccess] = useState(false); 
-  const navigate = useNavigate();
+   const[characters, setCharacters] = useState([]); 
+   const {pathname} = useLocation(); //pathname es una propiedad de Location que es un objeto
+   //useState es una funcion que me debuelve un  array con 2 cosas: un estado  y una funcion que modifica el estado
+   const[access, setAccess] = useState(false); 
+   const navigate = useNavigate();
 
    //Esto no nos dejará navegar por la aplicación, al menos que ingresemos la información correcta!
-  useEffect(() => {
+   useEffect(() => {
    !access && navigate('/');
-}, [access]);
+   }, [access]);
 
   const usename = 'email-prueba@gmail.com'
   const password = '1234imf'
 
   function onSearch(id) {
 
-   // API de JORGE
+   //API de JORGE
    // const URL_BASE = "https://be-a-rym.up.railway.app/api";
-   // const API_KEY = "477142636af7.4a5cc39cc5e9bad625db";
+   const URL_BASE = "https://rickandmortyapi.com/api/character/";
+   
+   //const API_KEY = "477142636af7.4a5cc39cc5e9bad625db";
 
-   const URL_BASE ="http://localhost:3001"; //rickandmorty"
-      
+   //const URL_BASE ="http://localhost:3001"; //rickandmorty"
+
+   // Busca primero en el estado global si ya esta el personaje   
    if(characters.find((char) => char.id === id)){
       return alert("Personaje repetido")
    }
+   //si no lo encuentra lo busca en la Api
    ////fetch(`${URL_BASE}/character/${id}?key=${API_KEY}`)
-   fetch(`${URL_BASE}/onsearch/${id}`)
+   fetch(`${URL_BASE}/${id}`)
        .then((response) => response.json()) 
        .then((data) => {
           if (data.name) {

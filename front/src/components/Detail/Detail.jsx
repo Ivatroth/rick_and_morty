@@ -20,7 +20,7 @@ const Detail = ()=>{
           setCharacter(response.data)
         });
       }, []);
-    console.log(character);
+    //console.log(character);
     return(
         <div className={styles.contenedor}>
           

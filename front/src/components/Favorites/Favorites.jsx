@@ -40,7 +40,7 @@ const Favorites = () => {
         </div>
         <div className="cardfavs">
           {myFavorites.map((char) => {
-            console.log(char);
+            //console.log(char);
             return( <Card 
                         id={char.id} 
                         name={char.name} 
